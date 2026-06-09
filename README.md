@@ -1,5 +1,5 @@
 
-  # Cinematic Game Marketing Website
+  # Code of Clues Game Website
 
   This is the source code Code of Clues game website. 
   
