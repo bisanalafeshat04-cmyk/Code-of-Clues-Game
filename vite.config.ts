@@ -14,14 +14,16 @@ function figmaAssetResolver() {
     },
   }
 }
-
 export default defineConfig({
   base: '/Code-of-Clues-Game/',
 
+  build: {
+    outDir: '.',
+    emptyOutDir: false,
+  },
+
   plugins: [
     figmaAssetResolver(),
-
-    // The React and Tailwind plugins are both required for Make
     react(),
     tailwindcss(),
   ],
@@ -32,6 +34,5 @@ export default defineConfig({
     },
   },
 
-  // File types to support raw imports
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
