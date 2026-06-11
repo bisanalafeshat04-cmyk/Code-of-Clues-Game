@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 function figmaAssetResolver() {
   return {
     name: 'figma-asset-resolver',
-    resolveId(id: string) {
+    resolveId(id) {
       if (id.startsWith('figma:asset/')) {
         const filename = id.replace('figma:asset/', '')
         return path.resolve(__dirname, 'src/assets', filename)
@@ -16,22 +16,15 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/Code-of-Clues-Game/',
-
   plugins: [
     figmaAssetResolver(),
-
-    // The React and Tailwind plugins are both required for Make
     react(),
     tailwindcss(),
   ],
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-
-  // File types to support raw imports
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
