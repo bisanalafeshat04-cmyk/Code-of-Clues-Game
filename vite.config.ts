@@ -14,13 +14,9 @@ function figmaAssetResolver() {
     },
   }
 }
+
 export default defineConfig({
   base: '/Code-of-Clues-Game/',
-
-  build: {
-    outDir: '.',
-    emptyOutDir: false,
-  },
 
   plugins: [
     figmaAssetResolver(),
